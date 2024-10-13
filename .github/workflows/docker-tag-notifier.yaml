@@ -37,7 +37,7 @@ jobs:
         python main.py
   
     - name: Upload the generated data as an artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: last_docker_tag
-          path: last_docker_tag.txt
+      uses: actions/upload-artifact@v2
+      with:
+        name: last_docker_tag
+        path: last_docker_tag.txt
