@@ -21,11 +21,25 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
+    
+    - name: Check for existing artifact
+      id: check_artifact
+      run: |
+        # Check if the artifact file already exists
+        if [ -f last_docker_tag.txt ]; then
+          echo "Artifact found, proceeding to download..."
+          echo "data_found=true" >> $GITHUB_ENV
+        else
+          echo "No artifact found, skipping download..."
+          echo "data_found=false" >> $GITHUB_ENV
+        fi
 
     - name: Download the data artifact
+      if: env.data_found == 'true'
       uses: actions/download-artifact@v3
       with:
         name: last_docker_tag
+        path: ./
 
     - name: Install dependencies
       run: |
