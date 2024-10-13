@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-# Docker repository to track (e.g., 'library/nextcloud')
+# Docker repository to track
 DOCKER_REPO = "library/nextcloud"
 
 # Pushbullet API URL and Access Token (from GitHub Secrets)
