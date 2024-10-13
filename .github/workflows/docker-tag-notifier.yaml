@@ -3,7 +3,7 @@ name: Docker Tag Notifier
 on:
   schedule:
     # Run the workflow every hour (adjust as needed)
-    - cron: '0 * * * *'
+    - cron: '* * * * *'
 
   workflow_dispatch: # Allows manual triggering of the workflow
   push:
