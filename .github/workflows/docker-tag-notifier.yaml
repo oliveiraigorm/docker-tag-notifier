@@ -33,4 +33,4 @@ jobs:
           PUSHBULLET_ACCESS_TOKEN: ${{ secrets.PUSHBULLET_ACCESS_TOKEN }}
           PUSHBULLET_CHANNEL_TAG: ${{ secrets.PUSHBULLET_CHANNEL_TAG }}
         run: |
-          python script.py
+          python main.py
